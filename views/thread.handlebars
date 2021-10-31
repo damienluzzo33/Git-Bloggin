@@ -1,0 +1,9 @@
+<section class="container">
+  <h3 class="thread-name">{{thread.name}}</h3>
+  <h4>Posted On: {{format_date thread.date_created}} {{format_time gallery.time_created}}</h4>
+  <section class="flex-row justify-center">
+    {{#each thread.comment as |comment|}}
+    {{> comment-details}}
+    {{/each}}
+  </section>
+</section>
