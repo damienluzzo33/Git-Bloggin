@@ -1,10 +1,20 @@
 <section>
-  <h3 class="thread-name">{{title}}</h3>
-  <h4 class="bold-signature">By: {{username}} {{format_date date_created}} {{format_time date_created}}</h4>
-  <section class="thread-comments">
-    {{#each comment as |individual-comment|}}
-    {{> comment-details}}
-    {{/each}}
-    <button id="newComment">Create New Comment</button>
-  </section>
+    <h3 class="thread-name">{{title}}</h3>
+    <h4 class="bold-signature">By: {{username}} {{format_date date_created}} {{format_time date_created}}</h4>
+    <section class="thread-comments">
+        {{#each comment as |individual-comment|}}
+        {{> comment-details}}
+        {{/each}}
+    </section>
+	<section class="add_comment">
+			<form class="form formAddComment">
+				<div class="form-group">
+					<label for="commentBody"></label>
+					<input type="text" placeholder="Add Comment" id="commentBody">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-info" type="submit">Submit Comment</button>
+				</div>
+			</form>
+	</section>
 </section>

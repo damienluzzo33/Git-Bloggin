@@ -18,7 +18,9 @@ const PORT = process.env.PORT || 3001;
 //* CREATE SESSION OBJECT
 const sessionObj = {
   secret: process.env.DB_SESSION_SECRET,
-  cookie: {},
+  cookie: {
+    maxAge: 300000
+  },
   resave: false,
   saveUninitialized: true,
   //* CREATE SEQUELIZE STORE FOR SESSION
