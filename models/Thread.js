@@ -23,11 +23,6 @@ Thread.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    time_created: {
-      //! LOOKUP HOW TIME FORMAT WORKS IN SEQUELIZE
-      type: DataTypes.TIME,
-      allowNull: false,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -38,6 +33,8 @@ Thread.init(
   },
   {
     sequelize,
+    timestamps: true,
+    updatedAt: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'thread',

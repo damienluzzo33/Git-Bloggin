@@ -1,5 +1,7 @@
+//* import the user model
 const { User } = require('../models');
 
+//* Create example/seed data set for the user data
 const userData = [
     {
         username: 'jack_crate',
@@ -18,6 +20,8 @@ const userData = [
     },
 ];
 
+//* seed the example data
 const seedUsers = () => User.bulkCreate(userData);
 
+//* export the function
 module.exports = seedUsers;

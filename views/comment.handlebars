@@ -1,6 +1,6 @@
-<section class="comment">
-  <div class="comment-details">
-    <h3>{{comment.title}}</h3>
-    <p>By: {{comment.username}} {{ format_date comment.date_created}}</p>
-  </div>
+<section>
+	<div class="comment-details">
+		<p class="comment-body">{{comment_body}}</p>
+		<p class="signature">By: {{username}} {{format_date date_created}} {{format_time date_created}}</p>
+	</div>
 </section>

@@ -1,9 +1,9 @@
 :root {
-  --primary: #00ccc2;
-  --secondary: #869093;
-  --tertiary: #467980;
-  --quatrinary: #676b6c;
-  --light: #edfcfd;
+  --primary: #00a3cc;
+  --secondary: #868d93;
+  --tertiary: #467080;
+  --quatrinary: #676a6c;
+  --light: #edf7fd;
   --dark: #182b2c;
   --border-radius: 0.3rem;
 }
@@ -18,54 +18,6 @@ body {
   background-color: var(--quatrinary);
 }
 
-a {
-  color: var(--dark);
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-}
-
-header {
-  padding: 40px;
-  text-align: center;
-  background: var(--primary);
-  color: var(--light);
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-}
-
-aside {
-  flex: 0;
-  background-color: var(--tertiary);
-  padding: 80px;
-  text-align: left;
-  color: var(--light);
-}
-
-nav {
-  display: flex;
-  background-color: var(--secondary);
-}
-
-nav a {
-  color: var(--light);
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
-}
-
-/* LAYOUT */
 .container {
   display: flex;
   flex-flow: column wrap;

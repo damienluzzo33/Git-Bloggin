@@ -1,0 +1,7 @@
+<section class="user-dashboard">
+    {{#each userThreads as |userThread|}}
+    {{> thread-details}}
+    {{/each}}
+</section>
+
+<button id="newThread">Create New Thread</button>
