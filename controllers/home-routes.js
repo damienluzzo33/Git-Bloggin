@@ -4,22 +4,13 @@ const { Thread, Comment, User } = require('../models');
 // Import custom middleware
 const withAuth = require('../utils/auth');
 
-//*  GET all of the threads for homepage.handlebars
+//*  GET all of the threads for homepage
 router.get('/', async (req, res) => {
   try {
     //* Find All Thread Data
     const dbThreadData = await Thread.findAll({
-      //* Double Join The Comments and Users with the Threads
-      include: [
-        {
-          model: Comment,
-          attributes: ['id','comment_body','date_created','user_id','thread_id']
-        },
-        {
-          model: User,
-          attributes: ['id','username']
-        }
-      ],
+      //* Join The Users with the Threads
+      include: 'user',
     });
     //*  Get threads data and map it to convert array objects into JSON
     const threads = dbThreadData.map((thread) =>
@@ -34,6 +25,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+//* GET all the threads for the logged in user
+
 
 //*  GET one thread by Id, and use custom middleware before allowing the user to access the thread
 router.get('/threads/:id', withAuth, async (req, res) => {
@@ -42,16 +35,11 @@ router.get('/threads/:id', withAuth, async (req, res) => {
     const dbThreadData = await Thread.findByPk(req.params.id, {
       //*  Double Join the Comment and User Data
       include: [
-        {
-          model: Comment,
-          attributes: ['id','comment_body','date_crated','user_id','thread_id'],
-        },
-        {
-          model: User,
-          attributes: ['id','username']
-        },
-      ],
-    });
+        
+        'user',
+        'comment'
+      ]
+    })
 
     //*  Get threads data and map it to convert sequelize object into JSON
     const thread = dbThreadData.get({ plain: true });

@@ -10,7 +10,8 @@ User.hasMany(Thread, {
 
 //*  the thread belongs to a user
 Thread.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  as: 'user',
 });
 
 //*  the user has many comments
@@ -21,6 +22,7 @@ User.hasMany(Comment, {
 //*  the comment belongs to a user
 Comment.belongsTo(User, {
   foreignKey: 'user_id',
+  as: 'user',
 });
 
 //* the comment belongs to a thread
@@ -31,6 +33,7 @@ Comment.belongsTo(Thread, {
 //* the thread has many comments
 Thread.hasMany(Comment, {
   foreignKey: 'thread_id',
+  as: 'comment',
 });
 
 //* export the updated models
