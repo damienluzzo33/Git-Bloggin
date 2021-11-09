@@ -34,6 +34,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   try {
     //* Find All Thread Data that belong to user
     const userThreadsData = await Thread.findAll({
+      //* Join The Users with the Threads
+      include: [{
+        model: User,
+        foreignKey: 'user_id',
+        as: 'user',
+      }],
       where: {
         user_id: req.session.user_id
       }

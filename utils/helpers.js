@@ -2,9 +2,9 @@
 
 module.exports = {
     // //* helper to format the time
-    // format_time: (date) => {
-    //     return date.toLocaleTimeString();
-    // },
+    format_time: (date) => {
+        return date.toLocaleTimeString();
+    },
 
     //* helper to format the date
     format_date: (date) => {

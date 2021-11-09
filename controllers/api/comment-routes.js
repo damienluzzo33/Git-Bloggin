@@ -4,7 +4,7 @@ const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //*  CREATE a new comment
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
             comment_body: req.body.comment_body,
@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const selectedComment = await Comment.update({
             comment_body: req.body.comment_body,
@@ -38,16 +38,16 @@ router.put('/:id', async (req, res) => {
                 id: req.params.id
             },
         });
-        if (!selectedComment) res.status(404).json({ message: "That comment doesn't exist..." });
+        if (!selectedComment) res.status(404).json({ message: "You can't edit a comment that you didn't create..." });
         res.status(200).json(selectedComment);
     } catch (err) {
         res.status(500).json(err);
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const selectedThread = await Thread.destroy({
+        const selectedThread = await Comment.destroy({
             where: {
                 id: req.params.id,
                 // user_id: req.session.user_id
@@ -56,7 +56,7 @@ router.delete('/:id', async (req, res) => {
             },
         });
         if (!selectedThread) {
-            res.status(404).json({ message: "That thread can't be deleted..." })
+            res.status(404).json({ message: "You can't delete a comment that you didn't create..." })
         }
         res.status(200).json(selectedThread);
     } catch (err) {

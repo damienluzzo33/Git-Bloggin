@@ -1,6 +1,6 @@
 <section>
     <h3 data-id="{{id}}" class="thread-name">{{title}}</h3>
-    <h4 class="bold-signature">By: {{username}} {{format_date date_created}} {{createdAt}}</h4>
+    <h4 class="bold-signature">By: {{user.username}} {{format_date date_created}} {{createdAt}}</h4>
     <section class="thread-comments">
         {{#each comment as |individual-comment|}}
         {{> comment-details}}
@@ -18,3 +18,5 @@
 			</form>
 	</section>
 </section>
+<script src="./js/createComment.js"></script>
+<script src="./js/deleteComment.js"></script>

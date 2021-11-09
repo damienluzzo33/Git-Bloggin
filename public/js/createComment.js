@@ -28,6 +28,3 @@ const newCommentHandler = async (event) => {
     }
 
 } 
-
-//* create a function that will allow the user to delete a new thread
-
