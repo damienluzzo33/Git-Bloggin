@@ -10,9 +10,7 @@ router.post('/', withAuth, async (req, res) => {
             comment_body: req.body.comment_body,
             date_created: req.body.date_created,
             thread_id: req.body.thread_id,
-            // user_id: req.session.user_id
-            //! test route
-            user_id: 1
+            user_id: req.session.user_id
         });
         if (!(newComment.comment_body && newComment.date_created && newComment.thread_id && newComment.user_id)) {
             res.status(404).json({ message: "Please enter data in all the required fields..." })
@@ -29,9 +27,7 @@ router.put('/:id', withAuth, async (req, res) => {
             comment_body: req.body.comment_body,
             thread_id: req.body.thread_id,
             date_created: req.body.dateCreated,
-            // user_id: req.session.user_id
-            //! test route
-            user_id: 1
+            user_id: req.session.user_id
         },
         {
             where: {
@@ -50,9 +46,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         const selectedThread = await Comment.destroy({
             where: {
                 id: req.params.id,
-                // user_id: req.session.user_id
-                //! test route
-                user_id: 1
+                user_id: req.session.user_id
             },
         });
         if (!selectedThread) {

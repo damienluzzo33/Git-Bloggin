@@ -10,9 +10,7 @@ router.post('/', withAuth, async (req, res) => {
             title: req.body.title,
             text_body: req.body.text_body,
             date_created: req.body.date_created,
-            // user_id: req.session.user_id
-            //! test route
-            user_id: 1
+            user_id: req.session.user_id
         });
         if (!(newThread.title && newThread.text_body && newThread.date_created && newThread.user_id)) {
             res.status(404).json({ message: "Please enter data in all the required fields..." })
@@ -29,14 +27,12 @@ router.put('/:id', withAuth, async (req, res) => {
         const selectedThread = await Thread.update({
             title: req.body.title,
             text_body: req.body.textBody,
-            date_created: req.body.dateCreated,
-            // user_id: req.session.user_id
-            //! test route
-            user_id: 1
+            date_created: req.body.dateCreated
         },
         {
             where: {
-                id: req.params.id
+                id: req.params.id,
+                user_id: req.session.user_id
             },
         });
         if (!selectedThread) res.status(404).json({ message: "That thread doesn't exist..." });
@@ -52,9 +48,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         const selectedThread = await Thread.destroy({
             where: {
                 id: req.params.id,
-                // user_id: req.session.user_id
-                //! test route
-                user_id: 1
+                user_id: req.session.user_id
             },
         });
         if (!selectedThread) {

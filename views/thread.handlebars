@@ -1,6 +1,10 @@
-<section>
+<section class="specific-thread">
     <h3 data-id="{{id}}" class="thread-name">{{title}}</h3>
     <h4 class="bold-signature">By: {{user.username}} {{format_date date_created}} {{createdAt}}</h4>
+	{{#if isAuthor}}
+	<button class="btn btn-info" type="button">Edit Post</button>
+	<button class="btn btn-danger" type="button">Delete Post</button>
+	{{/if}}
     <section class="thread-comments">
         {{#each comment as |individual-comment|}}
         {{> comment-details}}
@@ -20,3 +24,6 @@
 </section>
 <script src="./js/createComment.js"></script>
 <script src="./js/deleteComment.js"></script>
+<script src="./js/deleteThread.js"></script>
+
+<script src="./js/editThread"></script>
