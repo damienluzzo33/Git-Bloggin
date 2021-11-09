@@ -10,7 +10,11 @@ router.get('/', async (req, res) => {
     //* Find All Thread Data
     const dbThreadData = await Thread.findAll({
       //* Join The Users with the Threads
-      include: 'user',
+      include: [{
+        model: User,
+        foreignKey: 'user_id',
+        as: 'user',
+      }]
     });
     //*  Get threads data and map it to convert array objects into JSON
     const threads = dbThreadData.map((thread) =>
@@ -26,7 +30,26 @@ router.get('/', async (req, res) => {
 });
 
 //* GET all the threads for the logged in user
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    //* Find All Thread Data that belong to user
+    const userThreadsData = await Thread.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    });
+    //*  Get threads data and map it to convert array objects into JSON
+    const threads = userThreadsData.map((thread) =>
+      thread.get({ plain: true })
+    );
 
+    res.render('dashboard', {threads, loggedIn: req.session.loggedIn});
+  } catch (err) {
+    //* Throw error if we can't connect to the server
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
 
 //*  GET one thread by Id, and use custom middleware before allowing the user to access the thread
 router.get('/threads/:id', withAuth, async (req, res) => {
@@ -35,7 +58,6 @@ router.get('/threads/:id', withAuth, async (req, res) => {
     const dbThreadData = await Thread.findByPk(req.params.id, {
       //*  Double Join the Comment and User Data
       include: [
-        
         'user',
         'comment'
       ]
@@ -58,12 +80,7 @@ router.get('/comments/:id', withAuth, async (req, res) => {
     //* Find specific Comment Data based on the comment ID user is seeking
     const dbCommentData = await Comment.findByPk(req.params.id, {
       //* Join Comment table with the User table
-      include: [
-        {
-          model: User,
-          attributes: ['id','username']
-        },
-      ],
+      include: [{model: User}],
     });
     //*  Get comments data and map it to convert sequelize object into JSON
     const comment = dbCommentData.get({ plain: true });

@@ -33,7 +33,7 @@ const sessionObj = {
 app.use(session(sessionObj));
 
 //* BRING IN HELPERS
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({helpers});
 
 //* START UP HANDLEBARS ENGINE AND INSTANTIATE VIEWS
 app.engine('handlebars', hbs.engine);

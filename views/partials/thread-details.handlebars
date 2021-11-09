@@ -1,9 +1,9 @@
 <section>
     <a href="/threads/{{id}}">
         <div class="thread-block">
-			<header class="thread-head">{{thread.title}}</header>
-            <p class="thread-text">{{thread.text_body}}</p>
-			<p class="signature">Thread By: {{thread.username}} <span class="dateTime">{{format_date thread.date_created}} {{format_time thread.date_created}}</span></p>
+			<header class="thread-head">{{title}}</header>
+            {{!-- <p class="thread-text">{{text_body}}</p> --}}
+			<p class="signature">Thread By: {{user.username}} <span class="dateTime">{{format_date date_created}} {{createdAt}}</span></p>
         </div>
     </a>
 </section>

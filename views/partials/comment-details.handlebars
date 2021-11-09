@@ -2,7 +2,7 @@
     <a href="/comments/{{individual-comment.id}}">
         <div class="comment-body">
             <p class="comment-text">{{individual-comment.comment_body}}</p>
-			<p>Comment By: {{individual-comment.username}} <span class="dateTime">{{format_date individual-comment.date_created}} {{format_time individual-comment.date_created}}</span></p>
+			<p>Comment By: {{individual-comment.username}} <span class="dateTime">{{format_date individual-comment.date_created}} {{createdAt}}</span></p>
         </div>
     </a>
 </section>

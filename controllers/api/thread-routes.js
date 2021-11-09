@@ -1,15 +1,18 @@
 //*  Import express router and Thread and User model
 const router = require('express').Router();
 const { Thread, User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //*  CREATE new Thread
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newThread = await Thread.create({
             title: req.body.title,
-            text_body: req.body.textBody,
-            date_created: req.body.dateCreated,
-            user_id: req.session.user_id
+            text_body: req.body.text_body,
+            date_created: req.body.date_created,
+            // user_id: req.session.user_id
+            //! test route
+            user_id: 1
         });
         if (!(newThread.title && newThread.text_body && newThread.date_created && newThread.user_id)) {
             res.status(404).json({ message: "Please enter data in all the required fields..." })
@@ -21,13 +24,15 @@ router.post('/', async (req, res) => {
 });
 
 //*  UPDATE an existing thread
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const selectedThread = await Thread.update({
             title: req.body.title,
             text_body: req.body.textBody,
             date_created: req.body.dateCreated,
-            user_id: req.body.user_id
+            // user_id: req.session.user_id
+            //! test route
+            user_id: 1
         },
         {
             where: {
@@ -42,12 +47,14 @@ router.put('/:id', async (req, res) => {
 });
 
 //*  DELETE an existing thread
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const selectedThread = await Thread.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id
+                // user_id: req.session.user_id
+                //! test route
+                user_id: 1
             },
         });
         if (!selectedThread) {
