@@ -2,8 +2,8 @@
 
 module.exports = {
     // //* helper to format the time
-    format_time: (date) => {
-        return date.toLocaleTimeString();
+    format_time: (time) => {
+        return time.toLocaleTimeString();
     },
 
     //* helper to format the date

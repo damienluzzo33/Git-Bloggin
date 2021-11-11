@@ -1,13 +1,21 @@
 <section class="specific-thread">
     <h3 data-id="{{id}}" class="thread-name">{{title}}</h3>
     <h4 class="bold-signature">By: {{user.username}} {{format_date date_created}} {{createdAt}}</h4>
-	{{#if isAuthor}}
-	<button class="btn btn-info" type="button">Edit Post</button>
-	<button class="btn btn-danger" type="button">Delete Post</button>
+	{{#if isThreadAuthor}}
+		<div class="d-flex justify-content-space-around">
+			<button id="editThread" class="btn btn-info" type="button">Edit Thread</button>
+			<button id="deleteThread" class="btn btn-danger" type="button">Delete Thread</button>
+		</div>
 	{{/if}}
     <section class="thread-comments">
         {{#each comment as |individual-comment|}}
         {{> comment-details}}
+			{{#if isCommentAuthor}}
+				<div class="d-flex justify-content-space-around">
+					<button class="btn btn-info editBtn">Edit Comment</button>
+					<button class="btn btn-danger deleteBtn">Delete Comment</button>
+				</div>
+			{{/if}}
         {{/each}}
     </section>
 	<section class="add_comment">
@@ -25,5 +33,5 @@
 <script src="./js/createComment.js"></script>
 <script src="./js/deleteComment.js"></script>
 <script src="./js/deleteThread.js"></script>
-
-<script src="./js/editThread"></script>
+{{!-- <script src="./js/editThread.js"></script>
+<script src="./js/editComment.js"></script> --}}

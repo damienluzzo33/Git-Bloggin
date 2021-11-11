@@ -17,3 +17,6 @@ const deleteThreadHandler = async (event) => {
     }
 
 } 
+
+let deleteThreadBtn = document.querySelector("#deleteThread");
+deleteThreadBtn.addEventListener("click", deleteThreadHandler);

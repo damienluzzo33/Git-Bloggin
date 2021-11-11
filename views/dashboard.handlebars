@@ -1,7 +1,9 @@
 <button class="btn btn-info" id="newThread">Create New Thread</button>
 
 <section class="user-dashboard">
-    {{#each userThreads as |userThread|}}
+    {{#each threads as |thread|}}
     {{> thread-details}}
     {{/each}}
 </section>
+
+<a href="/new-thread">Compose New Thread</a>

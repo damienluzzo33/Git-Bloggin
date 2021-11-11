@@ -18,9 +18,10 @@
 		<nav>
 			<a href="/">Home</a>
 			{{#if loggedIn}}
-			<button id="logout" class="button">Logout</button>
+				<a href="/dashboard"><button id="dashboard" class="btn btn-info">Dashboard</button></a>
+				<button id="logout" class="btn btn-warning">Logout</button>
 			{{else}}
-			<a href="/login">Login/Sign Up</a>
+				<a href="/login"><button class="btn btn-success">Login/Sign Up</button></a>
 			{{/if}}
 		</nav>
 	</header>
@@ -30,12 +31,12 @@
 		</div>
 	</main>
 	<footer> --- Git Bloggin! 2021 --- </footer>
-	{{#if loggedIn}}
-	<script src="/js/logout.js"></script>
-	{{/if}}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+	{{#if loggedIn}}
+	<script src="/js/logout.js"></script>
+	{{/if}}
 </body>
 </html>
 

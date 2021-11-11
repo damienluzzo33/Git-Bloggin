@@ -24,10 +24,12 @@ const newThreadHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/dashboard');
         }
 
     }
 
 } 
 
+let newThreadForm = document.querySelector(".formCreateThread");
+newThreadForm.addEventListener("submit", newThreadHandler);
