@@ -1,0 +1,19 @@
+<div id="editing" data-id="{{threadData.id}}">
+    <h2 class="form-heading">Edit Thread</h2>
+    <div>
+        <form class="form formEditThread">
+            <div class="form-group">
+                <label for="thread-title">Title:</label>
+                <input type="text" value="{{threadData.title}}" id="thread-title">
+            </div>
+            <div class="form-group">
+                <label for="thread-body">Thread Body:</label>
+                <input type="text" value="{{threadData.text_body}}" id="thread-body">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Save Thread</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/js/editThread.js"></script>

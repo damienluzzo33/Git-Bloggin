@@ -1,16 +1,17 @@
 <section class="specific-thread">
-    <h3 data-id="{{id}}" class="thread-name">{{title}}</h3>
-    <h4 class="bold-signature">By: {{user.username}} {{format_date date_created}} {{createdAt}}</h4>
+    <h3 data-id="{{thread.id}}" class="thread-name">{{thread.title}}</h3>
+	<p>{{thread.text_body}}</p>
+    <h4 class="bold-signature">By: {{thread.user.username}} {{format_date thread.date_created}} {{thread.createdAt}}</h4>
 	{{#if isThreadAuthor}}
 		<div class="d-flex justify-content-space-around">
-			<button id="editThread" class="btn btn-info" type="button">Edit Thread</button>
+			<a href="/threads/{{thread.id}}/edit"><button id="editThread" class="btn btn-info" type="button">Edit Thread</button></a>
 			<button id="deleteThread" class="btn btn-danger" type="button">Delete Thread</button>
 		</div>
 	{{/if}}
     <section class="thread-comments">
-        {{#each comment as |individual-comment|}}
-        {{> comment-details}}
-			{{#if isCommentAuthor}}
+        {{#each comments as |comment|}}
+        {{>comment-details}}
+			{{#if comment.isCommentAuthor}}
 				<div class="d-flex justify-content-space-around">
 					<button class="btn btn-info editBtn">Edit Comment</button>
 					<button class="btn btn-danger deleteBtn">Delete Comment</button>

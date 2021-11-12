@@ -1,10 +1,11 @@
 //* create helpers that format the time and/or the date based on the date_created data
+const moment = require('moment');
 
 module.exports = {
     // //* helper to format the time
     format_time: (time) => {
-        return time.toLocaleTimeString();
-    },
+		return moment(time, 'HH:mm:ss').format('h:mm A');
+	},
 
     //* helper to format the date
     format_date: (date) => {

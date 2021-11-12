@@ -6,7 +6,7 @@ const newThreadHandler = async (event) => {
     const title = document.querySelector('#thread-title').value.trim();
     const text_body = document.querySelector('#thread-body').value.trim();
 
-    let theDate = new Date(date);
+    let theDate = new Date();
     var year  = theDate.getFullYear();
     var month = theDate.getMonth();
     var day   = theDate.getDate();

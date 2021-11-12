@@ -22,20 +22,23 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 //*  UPDATE an existing thread
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id/edit', withAuth, async (req, res) => {
     try {
-        const selectedThread = await Thread.update({
-            title: req.body.title,
-            text_body: req.body.textBody,
-            date_created: req.body.dateCreated
-        },
-        {
-            where: {
-                id: req.params.id,
-                user_id: req.session.user_id
+        const selectedThread = await Thread.update(
+            {
+                title: req.body.title,
+                text_body: req.body.text_body,
+                id: req.params.id
             },
-        });
-        if (!selectedThread) res.status(404).json({ message: "That thread doesn't exist..." });
+            {
+                where: {
+                    id: req.body.threadId
+                },
+                returning: true,
+                plain: true
+            }
+        );
+        if (!selectedThread[0]) res.status(404).json({ message: "That thread doesn't exist..." });
         res.status(200).json(selectedThread);
     } catch (err) {
         res.status(500).json(err);
