@@ -9,21 +9,19 @@ const editThreadHandler = async (event) => {
 
     if (title && text_body) {
         console.log(title)
-        const response = await fetch(`/api/threads/:id/edit`, {
+        const response = await fetch(`/api/threads/${threadId}`, {
             method: 'PUT',
-            body: JSON.stringify({ title, text_body, threadId }),
+            body: JSON.stringify({ title, text_body }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-
+        console.log(response)
         if (response.ok) {
             console.log(response)
             document.location.replace('/dashboard');
         }
-
     }
-
 } 
 
 let editThreadForm = document.querySelector(".formEditThread");

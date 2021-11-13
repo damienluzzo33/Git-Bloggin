@@ -3,7 +3,7 @@
 	<p>{{thread.text_body}}</p>
     <h4 class="bold-signature">By: {{thread.user.username}} {{format_date thread.date_created}} {{thread.createdAt}}</h4>
 	{{#if isThreadAuthor}}
-		<div class="d-flex justify-content-space-around">
+		<div class="d-flex justify-content-space-between">
 			<a href="/threads/{{thread.id}}/edit"><button id="editThread" class="btn btn-info" type="button">Edit Thread</button></a>
 			<button id="deleteThread" class="btn btn-danger" type="button">Delete Thread</button>
 		</div>
@@ -13,8 +13,8 @@
         {{>comment-details}}
 			{{#if comment.isCommentAuthor}}
 				<div class="d-flex justify-content-space-around">
-					<button class="btn btn-info editBtn">Edit Comment</button>
-					<button class="btn btn-danger deleteBtn">Delete Comment</button>
+					<button id="editComment-{{comment.id}}" class="btn btn-info edit-comment" type="button">Edit Comment</button>
+					<button id="comment-{{comment.id}}" class="btn btn-danger delete-comment" type="button">Delete Comment</button>
 				</div>
 			{{/if}}
         {{/each}}
@@ -31,8 +31,14 @@
 			</form>
 	</section>
 </section>
-<script src="./js/createComment.js"></script>
-<script src="./js/deleteComment.js"></script>
-<script src="./js/deleteThread.js"></script>
-{{!-- <script src="./js/editThread.js"></script>
-<script src="./js/editComment.js"></script> --}}
+
+<script src="../js/createComment.js"></script>
+
+{{#if comments}}
+<script src="../js/deleteComment.js"></script>
+{{!-- <script src="../js/editComment.js"></script> --}}
+{{/if}}
+
+{{#if isThreadAuthor}}
+<script src="../js/deleteThread.js"></script>
+{{/if}}

@@ -1,8 +1,8 @@
 <section class="comment-block">
     {{!-- <a href="/comments/{{comment.id}}"> --}}
-        <div class="comment-body">
-            <p class="comment-text">{{comment_body}}</p>
-			<p>Comment By: {{user.username}} <span class="dateTime">{{format_date date_created}} {{createdAt}}</span></p>
+        <div class="comment-div" id="commentDiv-{{id}}">
+            <p class="comment-body" id="commentBody-{{id}}">{{comment_body}}</p>
+			<p class="comment-details" id="commentDetails-{{id}}">Comment By: {{user.username}} <span class="dateTime">{{format_date date_created}} {{createdAt}}</span></p>
         </div>
     {{!-- </a> --}}
 </section>
