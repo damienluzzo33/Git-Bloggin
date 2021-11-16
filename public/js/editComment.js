@@ -3,10 +3,8 @@
 const editCommentHandler = async (event) => {
     event.preventDefault();
 
-    console.log("it works")
-
-    const comment_id_full = event.target.id;
-    const comment_id_num = comment_id_full.split('-')[1];
+    let comment_id_full = event.target.id;
+    let comment_id_num = comment_id_full.split('-')[1];
 
     const commentBody = document.querySelector(`#commentBody-${comment_id_num}`);
     const oldComment = commentBody.textContent;
@@ -18,15 +16,17 @@ const editCommentHandler = async (event) => {
     const commentDiv = document.querySelector(`#commentDiv-${comment_id_num}`);
     
     const newForm = document.createElement('form');
+    newForm.setAttribute('id', comment_id_num)
 
     const newInput = document.createElement('input');
     newInput.setAttribute("type", "text");
     newInput.setAttribute("value", oldComment);
-    newInput.setAttribute("id", `#newCommentBody-${comment_id_num}`)
+    newInput.setAttribute("id", `newCommentBody-${comment_id_num}`)
 
     const newSaveButton = document.createElement('button');
     newSaveButton.setAttribute('class', 'btn btn-success');
     newSaveButton.setAttribute('type', 'submit');
+    newSaveButton.textContent = "Save"
     
     newForm.appendChild(newInput);
     newForm.appendChild(newSaveButton);
@@ -39,25 +39,23 @@ const editCommentHandler = async (event) => {
 const updateComment = async (event) => {
     event.preventDefault();
 
+    let comment_id_num = event.target.id;
     const comment_body = document.querySelector(`#newCommentBody-${comment_id_num}`).value.trim();
     const thread_id = document.querySelector('.thread-name').getAttribute('data-id');
 
-    if (title && text_body) {
-        console.log(title)
-        const response = await fetch(`/api/comments/${thread_id}`, {
+    if (thread_id && comment_body) {
+        const response = await fetch(`/api/comments/${comment_id_num}`, {
             method: 'PUT',
-            body: JSON.stringify({ comment_body }),
+            body: JSON.stringify({ comment_body, thread_id }),
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        console.log(response)
         if (response.ok) {
-            console.log(response)
             document.location.replace(`/threads/${thread_id}`);
         }
     }
-} 
+}
 
 let editCommentBtns = document.querySelectorAll(".edit-comment");
 for (let btn of editCommentBtns) {

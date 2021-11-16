@@ -14,23 +14,38 @@
 
 <body>
 	<header>
-		<h1 class="logo">Git Bloggin!</h1>
-		<nav>
-			<a href="/">Home</a>
-			{{#if loggedIn}}
-				<a href="/dashboard"><button id="dashboard" class="btn btn-info">Dashboard</button></a>
-				<button id="logout" class="btn btn-warning">Logout</button>
-			{{else}}
-				<a href="/login"><button class="btn btn-success">Login/Sign Up</button></a>
-			{{/if}}
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand logo">Git Bloggin!</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="/"><button class="btn nav-button">Home</button></a>
+					</li>
+					{{#if loggedIn}}
+					<li class="nav-item">
+						<a class="nav-link" href="/dashboard"><button id="dashboard" class="btn nav-button">Dashboard</button></a>
+					</li>
+					<li class="nav-item">
+						<a href="/dashboard" class="nav-link"><button id="logout" class="btn logout-button">Logout</button></a>
+					</li>
+					{{else}}
+					<li class="nav-item">
+						<a href="/login"><button class="btn submit-button">Login/Sign Up</button></a>
+					</li>
+					{{/if}}
+				</ul>
+			</div>
 		</nav>
 	</header>
 	<main class="home-main">
-		<div class="blog">
+		<div class="container blog">
 		{{{body}}}
 		</div>
 	</main>
-	<footer> --- Git Bloggin! 2021 --- </footer>
+	<footer class="card text-center" style="background-color: #00a3cc; color: white; margin-top: 150px;"> --- Git Bloggin! 2021 --- </footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

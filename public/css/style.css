@@ -4,8 +4,14 @@
   --tertiary: #467080;
   --quatrinary: #676a6c;
   --light: #edf7fd;
+  --danger: #b40000e1;
+  --dangerclick: #ff4848;
+  --info: #0066c5da;
+  --infoclick: #3fa2ff;
+  --success: #008a22;
+  --successclick: #00da36;
   --dark: #182b2c;
-  --border-radius: 0.3rem;
+  --border-radius: 1rem;
 }
 
 body {
@@ -15,12 +21,122 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background-color: var(--quatrinary);
+  background-color: var(--light);
 }
 
-.container {
-  display: flex;
-  flex-flow: column wrap;
-  align-content: flex-start;
-  align-items: center;
+.thread-card {
+  background-color: var(--primary);
+  color: var(--light);
+  border-radius: var(--border-radius);
+}
+
+.specific-thread {
+  border-radius: var(--border-radius);
+}
+
+.thread-head {
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.thread-name {
+  font-size: 36px;
+}
+
+.thread-body {
+  font-size: 24px;
+}
+
+.signature {
+  font-style: italic;
+  font-size: 20px;
+  color: var(--primary)
+}
+
+.home-signature {
+  font-style: italic;
+  font-size: 20px;
+  color: var(--light)
+}
+
+.link {
+  text-decoration: none;
+  color: var(--light);
+}
+
+.comments {
+  border-radius: var(--border-radius);
+}
+
+.add-comment {
+  border-radius: var(--border-radius);
+}
+
+.comment-form {
+  text-align: center;
+}
+
+.comment-body {
+  font-size: 20px;
+}
+
+#commentBody {
+  width: 80%;
+}
+
+.comment-details {
+  font-size: 18px;
+}
+
+.edit-button {
+  background-color: var(--info);
+  color: var(--light);
+  font-weight: bold;
+  width: 100px;
+  transition: background-color, color 0.5s;
+}
+
+.edit-button:hover {
+  background-color: var(--infoclick);
+  color: white;
+}
+
+.delete-button {
+  background-color: var(--danger);
+  color: var(--light);
+  font-weight: bold;
+  width: 100px;
+  transition: background-color, color 0.5s;
+}
+
+.delete-button:hover {
+  background-color: var(--dangerclick);
+  color: white;
+}
+
+.submit-button {
+  background-color: var(--success);
+  color: var(--light);
+  font-weight: bold;
+  width: 100px;
+  transition: background-color, color 0.5s;
+}
+
+.submit-button:hover {
+  background-color: var(--successclick);
+  color: white;
+}
+
+.logout-button {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  transition: background-color, color 0.5s;
+}
+
+.nav-button {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  transition: background-color, color 0.5s;
 }

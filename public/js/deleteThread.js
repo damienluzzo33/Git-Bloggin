@@ -2,7 +2,6 @@
 
 const deleteThreadHandler = async (event) => {
     event.preventDefault();
-    console.log("button clicked!")
 
     const thread_id = document.querySelector('.thread-name').getAttribute('data-id');
 
@@ -13,7 +12,6 @@ const deleteThreadHandler = async (event) => {
         },
         body: null
     });
-    console.log(response)
 
     if (response.ok) {
         document.location.replace('/dashboard');
@@ -22,5 +20,4 @@ const deleteThreadHandler = async (event) => {
 } 
 
 let deleteThreadBtn = document.querySelector("#deleteThread");
-console.log(deleteThreadBtn)
 deleteThreadBtn.addEventListener("click", deleteThreadHandler);

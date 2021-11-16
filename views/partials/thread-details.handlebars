@@ -1,9 +1,9 @@
-<section class="thread-card" data-id="{{id}}">
-    <a href="/threads/{{id}}">
-        <div class="thread-block">
-			<header class="thread-head">{{title}}</header>
+<div class="card thread-card mt-3" data-id="{{id}}">
+    <div class="thread-block card-body">
+        <a class="link" href="/threads/{{id}}">
+            <header class="thread-head">{{title}}</header>
             {{!-- <p class="thread-text">{{text_body}}</p> --}}
-			<p class="signature">Thread By: {{user.username}} <span class="dateTime">{{format_date date_created}} {{createdAt}}</span></p>
-        </div>
-    </a>
-</section>
+            <p class="home-signature">Threaded By: {{user.username}} on<span class="dateTime"> {{format_date date_created}} @ {{format_time createdAt}}</span></p>
+        </a>
+    </div>
+</div>
