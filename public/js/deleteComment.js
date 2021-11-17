@@ -6,7 +6,6 @@ const deleteCommentHandler = async (event) => {
     const comment_id_num = comment_id_full.split('-')[1];
     const thread_id = document.querySelector('.thread-name').getAttribute('data-id');
 
-
     const response = await fetch(`/api/comments/${comment_id_num}`, {
         method: 'DELETE',
         headers: {

@@ -1,7 +1,8 @@
+<h2 id="dashboard-title">Dashboard</h2>
 <section class="user-dashboard">
     {{#each threads as |thread|}}
     {{> thread-details}}
     {{/each}}
 </section>
 
-<a href="/new-thread">Compose New Thread</a>
+<a href="/new-thread"><button class="btn new-thread-button">Compose New Thread</button></a>

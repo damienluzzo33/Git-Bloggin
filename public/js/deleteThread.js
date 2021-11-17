@@ -1,10 +1,9 @@
 //* create a function that will allow the user to delete a thread they've created
-
-const deleteThreadHandler = async (event) => {
+let deleteThreadHandler = async (event) => {
     event.preventDefault();
-
+    //* get the thread id of the the targeted thread
     const thread_id = document.querySelector('.thread-name').getAttribute('data-id');
-
+    //* fetch the DELETE api route
     const response = await fetch(`/api/threads/${thread_id}`, {
         method: 'DELETE',
         headers: {
@@ -19,5 +18,6 @@ const deleteThreadHandler = async (event) => {
 
 } 
 
-let deleteThreadBtn = document.querySelector("#deleteThread");
-deleteThreadBtn.addEventListener("click", deleteThreadHandler);
+let deleteThreadBtn = document.querySelectorAll("#deleteThread").forEach(item => {
+    item.addEventListener("click", deleteThreadHandler)
+})

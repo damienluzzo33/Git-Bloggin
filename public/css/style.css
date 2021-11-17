@@ -10,6 +10,8 @@
   --infoclick: #3fa2ff;
   --success: #008a22;
   --successclick: #00da36;
+  --new: #00977e;
+  --newclick: #00d8b4;
   --dark: #182b2c;
   --border-radius: 1rem;
 }
@@ -22,6 +24,19 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
   background-color: var(--light);
+  text-align: center;
+}
+
+#dashboard-title {
+  margin-top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#home-title {
+  margin-top: 15px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .thread-card {
@@ -32,11 +47,27 @@ body {
 
 .specific-thread {
   border-radius: var(--border-radius);
+  background-color: var(--primary);
+  color: var(--light);
+  margin-top: 15px;
+}
+
+.specific-thread .signature {
+  color: black;
 }
 
 .thread-head {
   font-size: 24px;
   text-decoration: underline;
+  background-color: var(--light);
+  width: 90%;
+  border-radius: var(--border-radius);
+  margin: 15px 5px 10px 5px;
+  color: var(--dark);
+  font-weight: bold;
+  padding: 10px 5px 10px 5px;
+  margin: auto;
+  min-width: 300px;
 }
 
 .thread-name {
@@ -47,16 +78,23 @@ body {
   font-size: 24px;
 }
 
+.thread-block {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
 .signature {
   font-style: italic;
   font-size: 20px;
-  color: var(--primary)
+  color: var(--primary);
 }
 
 .home-signature {
   font-style: italic;
   font-size: 20px;
-  color: var(--light)
+  color: var(--light);
+  margin-top: 10px;
 }
 
 .link {
@@ -66,10 +104,12 @@ body {
 
 .comments {
   border-radius: var(--border-radius);
+  background-color: var(--primary);
 }
 
 .add-comment {
   border-radius: var(--border-radius);
+  background-color: var(--quatrinary);
 }
 
 .comment-form {
@@ -88,11 +128,36 @@ body {
   font-size: 18px;
 }
 
+.comment-div {
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+}
+
+.comment-block {
+  border-radius: var(--border-radius);
+  margin: 15px 10px 15px 10px;
+}
+
+.new-thread-button {
+  background-color: var(--new);
+  color: var(--light);
+  font-weight: bold;
+  width: 200px;
+  box-shadow: 3px 3px 6px black;
+  transition: background-color, color 0.5s;
+}
+
+.new-thread-button:hover {
+  background-color: var(--newclick);
+  color: var(--light);
+}
+
 .edit-button {
   background-color: var(--info);
   color: var(--light);
   font-weight: bold;
   width: 100px;
+  box-shadow: 3px 3px 6px black;
   transition: background-color, color 0.5s;
 }
 
@@ -106,6 +171,7 @@ body {
   color: var(--light);
   font-weight: bold;
   width: 100px;
+  box-shadow: 3px 3px 6px black;
   transition: background-color, color 0.5s;
 }
 
@@ -118,7 +184,8 @@ body {
   background-color: var(--success);
   color: var(--light);
   font-weight: bold;
-  width: 100px;
+  width: 150px;
+  box-shadow: 3px 3px 6px black;
   transition: background-color, color 0.5s;
 }
 
@@ -131,6 +198,7 @@ body {
   background-color: var(--primary);
   color: white;
   font-weight: bold;
+  width: 150px;
   transition: background-color, color 0.5s;
 }
 
@@ -138,5 +206,6 @@ body {
   background-color: var(--primary);
   color: white;
   font-weight: bold;
+  width: 150px;
   transition: background-color, color 0.5s;
 }

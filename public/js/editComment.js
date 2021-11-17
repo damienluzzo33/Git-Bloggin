@@ -1,6 +1,6 @@
 //* create a function that will allow the user to create a new thread
 
-const editCommentHandler = async (event) => {
+let editCommentHandler = async (event) => {
     event.preventDefault();
 
     let comment_id_full = event.target.id;
@@ -57,7 +57,6 @@ const updateComment = async (event) => {
     }
 }
 
-let editCommentBtns = document.querySelectorAll(".edit-comment");
-for (let btn of editCommentBtns) {
-    btn.addEventListener("click", editCommentHandler);
-}
+let editCommentBtns = document.querySelectorAll(".edit-comment").forEach(item => {
+    item.addEventListener("click", editCommentHandler)
+})

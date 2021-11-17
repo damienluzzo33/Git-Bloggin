@@ -19,6 +19,7 @@ const loginFormHandler = async (event) => {
     //*  if the response comes back okay, then send the user to the homepage
     if (response.ok) {
       document.location.replace('/');
+      window.location.reload();
       //*  otherwise, let the user know the login attempt failed
     } else {
       alert('Failed to log in.');
@@ -46,6 +47,7 @@ const signupFormHandler = async (event) => {
     //* if the response comes back okay, then send the user to the homepage
     if (response.ok) {
       document.location.replace('/');
+      window.location.reload();
       //* otherwise, let the user know that they failed to properly sign-up
     } else {
       alert('Failed to sign up.');
