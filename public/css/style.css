@@ -56,6 +56,10 @@ body {
   color: black;
 }
 
+.thread-link {
+  width: 100%;
+}
+
 .thread-head {
   font-size: 24px;
   text-decoration: underline;
@@ -65,9 +69,8 @@ body {
   margin: 15px 5px 10px 5px;
   color: var(--dark);
   font-weight: bold;
-  padding: 10px 5px 10px 5px;
   margin: auto;
-  min-width: 300px;
+  padding: 10px 5px 10px 5px;
 }
 
 .thread-name {
