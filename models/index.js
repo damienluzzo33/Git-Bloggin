@@ -28,12 +28,14 @@ Comment.belongsTo(User, {
 //* the comment belongs to a thread
 Comment.belongsTo(Thread, {
   foreignKey: 'thread_id',
+  onDelete: 'CASCADE'
 });
 
 //* the thread has many comments
 Thread.hasMany(Comment, {
   foreignKey: 'thread_id',
   as: 'comment',
+  onDelete: 'CASCADE'
 });
 
 //* export the updated models
