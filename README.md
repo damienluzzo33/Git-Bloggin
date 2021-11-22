@@ -2,7 +2,7 @@
 
 ## Description
 
-[Deployed Application]()
+[Deployed Application](https://git-bloggin.herokuapp.com/)
 
 Messaging forums and blogs have gone mainstream. In today's world, it's tough to find an internet user who doesn't read or contribute to a forum or blog. When we're talking about the world of coding and computer science, it's even more rare to find a software developer who doesn't utilize the resources of something like reddit or stack overflow. Git Bloggin was created to provide developers with a new place to ask questions, get answers, create tutorials, etc, without the extra bells and whistles that clutter up popular landing pages like stack overflow.
 
@@ -11,10 +11,10 @@ Tired of outdated posts? Not interested in all the extraneous things that stack 
 If you are interested in improving or modifying this application for your own personal usage, please go ahead and clone down the repository and transform it into your own amazing Forum or Blogging Website!
 
 <!-- RECORD THIS -->
-[Link to video demo of app]()
+[Link to video demo of app](https://drive.google.com/file/d/1bi82jAaHpahCg91TxA7y30aj6ksFjUrC/view?usp=sharing)
 
 <!-- RECORD THIS -->
-![Giphy demo of project]()
+![Giphy demo of project](./public/images/git-bloggin-gif.gif)
 
 ## Table of Contents
 
