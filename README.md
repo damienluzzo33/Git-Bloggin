@@ -10,10 +10,8 @@ Tired of outdated posts? Not interested in all the extraneous things that stack 
 
 If you are interested in improving or modifying this application for your own personal usage, please go ahead and clone down the repository and transform it into your own amazing Forum or Blogging Website!
 
-<!-- RECORD THIS -->
 [Link to video demo of app](https://drive.google.com/file/d/1bi82jAaHpahCg91TxA7y30aj6ksFjUrC/view?usp=sharing)
 
-<!-- RECORD THIS -->
 ![Giphy demo of project](./public/images/git-bloggin-gif.gif)
 
 ## Table of Contents
