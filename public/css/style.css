@@ -1,5 +1,6 @@
 :root {
   --primary: #00a3cc;
+  --primaryclick: #24d3ff;
   --secondary: #868d93;
   --tertiary: #467080;
   --quatrinary: #676a6c;
@@ -211,4 +212,12 @@ body {
   font-weight: bold;
   width: 150px;
   transition: background-color, color 0.5s;
+}
+
+.logout-button:hover {
+  background-color: var(--primaryclick);
+}
+
+.nav-button:hover {
+  background-color: var(--primaryclick);
 }

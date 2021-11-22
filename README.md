@@ -47,10 +47,10 @@ If you are interested in improving or modifying this application for your own pe
 ### Screenshots:
 
 Desktop:
-![Desktop view of application]()
+![Desktop view of application](./public/images/screenshot_desktop_view.png)
 
 Mobile:
-![Mobile view of application]()
+![Mobile view of application](./public/images/screenshot_mobile_view.png)
 
 ## Credits
 
