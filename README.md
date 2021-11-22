@@ -1,5 +1,6 @@
 # Git Bloggin
 
+
 ## Description
 
 [Deployed Application](https://git-bloggin.herokuapp.com/)
@@ -14,6 +15,7 @@ If you are interested in improving or modifying this application for your own pe
 
 ![Giphy demo of project](./public/images/git-bloggin-gif.gif)
 
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -23,11 +25,13 @@ If you are interested in improving or modifying this application for your own pe
 - [Features](#features)
 - [Examples/Tests](#examples)
 
+
 ## Installation
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 - While this application is already hosted and running on Heroku, you can alternatively clone this repository down to your local machine and connect the application to your local MySQL database.
+
 
 ## Usage
 
@@ -42,13 +46,16 @@ If you are interested in improving or modifying this application for your own pe
 - Finally, all you have to do is navigate to http://localhost:3000/ and Git Bloggin!
 
 
-### Screenshots:
+## Screenshots:
 
-Desktop:
+### Desktop:
+
 ![Desktop view of application](./public/images/screenshot_desktop_view.png)
 
-Mobile:
+### Mobile:
+
 ![Mobile view of application](./public/images/screenshot_mobile_view.png)
+
 
 ## Credits
 
@@ -66,9 +73,11 @@ Assets:
 
 + [session by expressjs](https://github.com/expressjs/session)
 
+
 ## License
 
 + MIT
+
 
 ## Features
 
@@ -78,13 +87,16 @@ Assets:
 
 + Finally, users can comment on threads, including their own, edit comments they've created, and delete comments that they are the owners of.
 
+
 ## How to Contribute
 
 If you would like to contribute to this Git Bloggin application, please feel free to clone or fork this repository and implement your desired improvements. Once your improvements have been made and the app has been tested properly, please feel free to send me a message on github with a short summary of the changes you've made and I will invite you to be a collaborator.
 
+
 ## Examples
 
 To see an example for how to use the application and access all of its current features, please refer to the video and gif in the description above.
+
 
 ## Questions
 
